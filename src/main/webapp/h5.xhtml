@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:jsf="http://java.sun.com/jsf"
+      >
+<head jsf:id="headid">
+
+<title>h5</title>
+</head>
+<h:body>
+   <script>
+   		window.onload= function(){
+   		//	alert("onloaded.")
+   			var inputDom = document.getElementById("sss")
+   		//	alert(inputDom.value)
+   			var jsfInputDom = document.getElementById("jsfinput")
+   		//	alert(jsfInputDom.id)
+   			console.log(jsfInputDom)
+   			
+   		}
+		
+   </script>
+	<h:form id="g0" jsf:id="frm" action="h5result.xhtml">
+		h5 Input:<input id="sss" jsf:id="myinput" type="text" jsf:placeholder="input some text" jsf:value="#{user.data}" /><br/>
+		jsf Input1:<h:inputText id="jsfinput" value="#{user.data}"/><br/>
+		<br/> <div>#{user.data}</div>
+		<button type="submit" jsf:actionListener="#{user.changeData()}">submit</button>
+		  <h:commandButton value="Submit" action="h5result" />
+	      <h:commandButton value="Reset" type="reset" />
+	</h:form>
+	
+	
+</h:body>
+</html>

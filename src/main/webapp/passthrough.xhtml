@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head jsf:id="head">
+    <link jsf:rel="stylesheet" jsf:href="style.css" jsf:name="style.css" />
+</head>
+<script>
+		function handleDoSome(){
+			var dom = document.getElementById("form:email4")
+			alert(dom.id);
+		}
+		
+	</script>
+<h:body>
+
+    <h2>JSF 2: HTML5 placeholder</h2>
+
+    <h:form id="form">
+        <p>by passthrough attribute inside element</p>
+        <h:inputText id="email1" value="#{passthrough.email1}" p:type="email" p:placeholder="Enter email"/>
+
+        <p>by passthrough as inner element</p>
+        <h:inputText id="email2" value="#{passthrough.email2}">
+            <f:passThroughAttribute name="type" value="email"/>
+            <f:passThroughAttribute name="placeholder" value="Enter email"/>
+        </h:inputText>
+
+        <p>by passtrhrough with attributes from managed bean</p>
+        <h:inputText id="email3" value="#{passthrough.email3}">
+            <f:passThroughAttributes value="#{passthrough.attributes}"/>
+        </h:inputText>
+
+        <p>by enhancing html with jsf</p>
+        <input type="email" jsf:id="email4" placeholder="Enter email" jsf:value="#{passthrough.email4}">
+            <f:validateLength minimum="5"/>
+        </input>
+
+        <p>action buttons</p>
+        <h:panelGroup>
+            <h:commandButton value="Save by jsf" action="passthroughresult"/>
+            <input jsf:id="save" type="submit" value="Save by html"/>
+        </h:panelGroup>
+
+		<button id="dosome" onclick="handleDoSome()">dosome</button>
+    </h:form>
+
+	
+</h:body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      >
+    <h:body>
+      <h:form>
+	      <h2>Mutiple checkboxes</h2>
+	 
+	      1. Hard-coded with "f:selectItem" : 
+	       <h:selectManyCheckbox value="#{user.favNumber1}">
+	         <f:selectItem itemValue="1" itemLabel="Number1 - 1" />
+	         <f:selectItem itemValue="2" itemLabel="Number1 - 2" />
+	         <f:selectItem itemValue="3" itemLabel="Number1 - 3" />
+	         <f:selectItem itemValue="4" itemLabel="Number1 - 4" />
+	         <f:selectItem itemValue="5" itemLabel="Number1 - 5" />
+	       </h:selectManyCheckbox>
+	 
+	      <br />
+	      
+	 <h:selectBooleanCheckbox value="#{usersDto.userlist[0].rememberMe}"></h:selectBooleanCheckbox>
+     <h:selectBooleanCheckbox value="#{usersDto.userlist[1].rememberMe}"></h:selectBooleanCheckbox>
+  
+  
+  <br>this is jsf h:input</br>
+  
+  	<h:inputText value="#{nameList.names[0].first}" /> <h:inputText value="#{nameList.names[0].last}"/>
+ 	
+ 	<br> this is h5 input:</br>
+ 	<input type="text" value="#{nameList.names[1].first}" /> <input type="text" value="#{nameList.names[1].last}"/>
+  
+  <br/>
+  <br/>
+  
+  blank jsfinput<h:inputText title="this is jsf input title." value='0' />
+  
+  <br>stopObjList:</br>
+ 
+	 
+	      <h:commandButton value="Submit" action="result2" />
+	    <h:commandButton value="Reset" type="reset" />
+ 
+      </h:form>
+ 
+    </h:body>
+ 
+
+</html>
